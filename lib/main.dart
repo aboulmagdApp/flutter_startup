@@ -30,16 +30,24 @@ class Login extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Card(
+        body: Container(
+          width: double.infinity,
+          height: 400,
           color: Colors.red,
-          elevation: 20,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-              side: BorderSide(color: Colors.black, width: 4)),
-          shadowColor: Colors.red,
-          child: Text(
-            "aboulmagd",
-            style: TextStyle(fontSize: 40),
+          child: Column(
+            // mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            // x محور
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text("How Are You"),
+              Text("How Are You Too"),
+              Container(
+                color: Colors.red,
+                child: Text("this is Flutter "),
+              ),
+              // Image.asset('assets/images/unnamed.png')
+            ],
           ),
         ));
   }

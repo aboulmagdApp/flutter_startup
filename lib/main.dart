@@ -30,24 +30,36 @@ class Login extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Row(
+        body: Column(
           children: [
             Expanded(
               child: Container(
-                child: Text("One"),
+                width: double.infinity,
+                child: Text(
+                  "One",
+                  style: TextStyle(fontSize: 40),
+                ),
                 color: Colors.red,
               ),
             ),
             Expanded(
               flex: 2,
               child: Container(
-                child: Text("Two"),
+                width: double.infinity,
+                child: Text(
+                  "Two",
+                  style: TextStyle(fontSize: 40),
+                ),
                 color: Colors.green,
               ),
             ),
             Expanded(
               child: Container(
-                child: Text("Three"),
+                width: double.infinity,
+                child: Text(
+                  "Three",
+                  style: TextStyle(fontSize: 40),
+                ),
                 color: Colors.blue,
               ),
             ),

@@ -35,19 +35,16 @@ class Login extends StatelessWidget {
           height: 400,
           color: Colors.black,
           child: Stack(
-            //alignment: Alignment.topCenter,
+            clipBehavior: Clip.none,
             children: [
-              Container(
-                color: Colors.red,
-                width: 200,
-                height: 200,
-              ),
-              Container(
-                color: Colors.green,
-                width: 100,
-                height: 100,
-                child: Text("widget two"),
-              ),
+              Positioned(
+                  width: 200,
+                  height: 200,
+                  top: 240,
+                  child: Container(
+                    color: Colors.red,
+                    child: Text("Position one"),
+                  )),
             ],
           ),
         ));

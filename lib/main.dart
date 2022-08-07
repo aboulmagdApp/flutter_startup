@@ -30,70 +30,72 @@ class Login extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Wrap(
-          direction: Axis.vertical,
-          children: [
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.red,
-              width: 90,
-              height: 100,
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.red,
-              width: 90,
-              height: 100,
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.red,
-              width: 90,
-              height: 100,
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.red,
-              width: 90,
-              height: 100,
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.red,
-              width: 90,
-              height: 100,
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.red,
-              width: 90,
-              height: 100,
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.red,
-              width: 90,
-              height: 100,
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.red,
-              width: 90,
-              height: 100,
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.red,
-              width: 90,
-              height: 100,
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.red,
-              width: 90,
-              height: 100,
-            ),
-          ],
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.all(10),
+                color: Colors.red,
+                width: 90,
+                height: 100,
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                color: Colors.red,
+                width: 90,
+                height: 100,
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                color: Colors.red,
+                width: 90,
+                height: 100,
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                color: Colors.red,
+                width: 90,
+                height: 100,
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                color: Colors.red,
+                width: 90,
+                height: 100,
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                color: Colors.red,
+                width: 90,
+                height: 100,
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                color: Colors.red,
+                width: 90,
+                height: 100,
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                color: Colors.red,
+                width: 90,
+                height: 100,
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                color: Colors.red,
+                width: 90,
+                height: 100,
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                color: Colors.red,
+                width: 90,
+                height: 100,
+              ),
+            ],
+          ),
         ));
   }
 }

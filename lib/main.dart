@@ -30,32 +30,70 @@ class Login extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          width: double.infinity,
-          child: IndexedStack(
-            index: 1,
-            children: [
-              Container(
-                color: Colors.red,
-                child: Text("One"),
-                width: 500,
-                height: 500,
-              ),
-              Container(
-                color: Colors.green,
-                child: Text("Two"),
-                width: 300,
-                height: 300,
-              ),
-              Container(
-                color: Colors.blue,
-                child: Text("Three"),
-                width: 200,
-                height: 200,
-              )
-            ],
-          ),
+        body: Wrap(
+          direction: Axis.vertical,
+          children: [
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.red,
+              width: 90,
+              height: 100,
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.red,
+              width: 90,
+              height: 100,
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.red,
+              width: 90,
+              height: 100,
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.red,
+              width: 90,
+              height: 100,
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.red,
+              width: 90,
+              height: 100,
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.red,
+              width: 90,
+              height: 100,
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.red,
+              width: 90,
+              height: 100,
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.red,
+              width: 90,
+              height: 100,
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.red,
+              width: 90,
+              height: 100,
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.red,
+              width: 90,
+              height: 100,
+            ),
+          ],
         ));
   }
 }

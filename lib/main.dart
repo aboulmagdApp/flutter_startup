@@ -31,20 +31,29 @@ class Login extends StatelessWidget {
         appBar: AppBar(),
         drawer: Drawer(),
         body: Container(
-          width: 400,
-          height: 400,
-          color: Colors.black,
-          child: Stack(
-            clipBehavior: Clip.none,
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          width: double.infinity,
+          child: IndexedStack(
+            index: 1,
             children: [
-              Positioned(
-                  width: 200,
-                  height: 200,
-                  top: 240,
-                  child: Container(
-                    color: Colors.red,
-                    child: Text("Position one"),
-                  )),
+              Container(
+                color: Colors.red,
+                child: Text("One"),
+                width: 500,
+                height: 500,
+              ),
+              Container(
+                color: Colors.green,
+                child: Text("Two"),
+                width: 300,
+                height: 300,
+              ),
+              Container(
+                color: Colors.blue,
+                child: Text("Three"),
+                width: 200,
+                height: 200,
+              )
             ],
           ),
         ));

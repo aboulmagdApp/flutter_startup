@@ -30,9 +30,22 @@ class Login extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Icon(
-          Icons.room,
-          size: 200,
+        body: Column(
+          children: [
+            Text(
+              'How Are You text one',
+              style: TextStyle(fontSize: 40),
+            ),
+            Divider(
+              color: Colors.black,
+              height: 50,
+              thickness: 0.2,
+            ),
+            Text(
+              'How Are You text two',
+              style: TextStyle(fontSize: 40),
+            )
+          ],
         ));
   }
 }

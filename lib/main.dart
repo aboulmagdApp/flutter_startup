@@ -33,22 +33,15 @@ class Login extends StatelessWidget {
         body: Column(
           children: [
             Center(
-              child: ElevatedButton.icon(
-                onPressed: () {
-                  print('onClick');
-                },
-                icon: Icon(Icons.ac_unit),
-                label: Text('Click button'),
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.red,
-                    padding: EdgeInsets.symmetric(horizontal: 30),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30)),
-                    textStyle:
-                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
-                    // elevation: 20,
-                    // shadowColor: Colors.blue
-                    ),
+              child: MaterialButton(
+                onPressed: () {},
+                child: Text('aboulmagd'),
+                elevation: 10,
+                splashColor: Colors.blue,
+                color: Colors.red,
+                height: 40,
+                minWidth: 200,
+                textColor: Colors.white,
               ),
             ),
           ],

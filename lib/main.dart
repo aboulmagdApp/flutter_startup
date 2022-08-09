@@ -28,18 +28,13 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      drawer: Drawer(),
-      body: Center(
-        child: IconButton(
-          iconSize: 50,
-          color: Colors.red,
-          onPressed: () {
-            print('aboulmagd');
+        appBar: AppBar(),
+        drawer: Drawer(),
+        body: InkWell(
+          child: Image.asset('assets/images/unnamed.png'),
+          onTap: () {
+            print('mohamed');
           },
-          icon: Icon(Icons.person),
-        ),
-      ),
-    );
+        ));
   }
 }

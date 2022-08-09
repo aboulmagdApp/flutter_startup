@@ -33,11 +33,12 @@ class Login extends StatelessWidget {
         body: Column(
           children: [
             Center(
-              child: ElevatedButton(
+              child: ElevatedButton.icon(
                 onPressed: () {
                   print('onClick');
                 },
-                child: Text('Click button'),
+                icon: Icon(Icons.ac_unit),
+                label: Text('Click button'),
                 style: ElevatedButton.styleFrom(
                     primary: Colors.red,
                     padding: EdgeInsets.symmetric(horizontal: 30),

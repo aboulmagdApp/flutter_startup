@@ -30,23 +30,27 @@ class Login extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Center(
-          child: RaisedButton(
-            disabledColor: Colors.green,
-            disabledTextColor: Colors.red,
-            elevation: 20,
-            splashColor: Colors.red,
-            onLongPress: () {
-              print('long pressed');
-            },
-            textColor: Colors.white,
-            color: Colors.green,
-            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-            onPressed: () {
-              print("Sign up");
-            },
-            child: Text('انشاء الحساب'),
-          ),
+        body: Column(
+          children: [
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  print('onClick');
+                },
+                child: Text('Click button'),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.red,
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30)),
+                    textStyle:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
+                    // elevation: 20,
+                    // shadowColor: Colors.blue
+                    ),
+              ),
+            ),
+          ],
         ));
   }
 }

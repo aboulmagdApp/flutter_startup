@@ -30,72 +30,12 @@ class Login extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
-              Container(
-                margin: EdgeInsets.all(10),
-                color: Colors.red,
-                width: 90,
-                height: 100,
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                color: Colors.red,
-                width: 90,
-                height: 100,
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                color: Colors.red,
-                width: 90,
-                height: 100,
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                color: Colors.red,
-                width: 90,
-                height: 100,
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                color: Colors.red,
-                width: 90,
-                height: 100,
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                color: Colors.red,
-                width: 90,
-                height: 100,
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                color: Colors.red,
-                width: 90,
-                height: 100,
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                color: Colors.red,
-                width: 90,
-                height: 100,
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                color: Colors.red,
-                width: 90,
-                height: 100,
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                color: Colors.red,
-                width: 90,
-                height: 100,
-              ),
-            ],
+        body: Row(children: [
+          Text('Mohamed'),
+          SizedBox(
+            width: 100,
           ),
-        ));
+          Text('aboulmagd'),
+        ]));
   }
 }

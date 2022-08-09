@@ -33,15 +33,11 @@ class Login extends StatelessWidget {
         body: Column(
           children: [
             Center(
-              child: MaterialButton(
+              child: TextButton(
                 onPressed: () {},
-                child: Text('aboulmagd'),
-                elevation: 10,
-                splashColor: Colors.blue,
-                color: Colors.red,
-                height: 40,
-                minWidth: 200,
-                textColor: Colors.white,
+                child: Text('click me'),
+                style: TextButton.styleFrom(
+                    primary: Colors.white, backgroundColor: Colors.red),
               ),
             ),
           ],

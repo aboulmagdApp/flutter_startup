@@ -30,50 +30,17 @@ class Login extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          backgroundColor: Colors.green,
-          child: Icon(Icons.add),
-        ),
-        body: ListView(
-          children: [
-            Container(
-              child: Text('Container'),
-              color: Colors.blue,
-              height: 200,
-              margin: EdgeInsets.only(top: 100, bottom: 100),
+        body: Center(
+          child: GestureDetector(
+            child: Container(
+              child: Text('Add'),
+              color: Colors.red,
+              padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
             ),
-            Container(
-              child: Text('Container'),
-              color: Colors.blue,
-              height: 200,
-              margin: EdgeInsets.only(top: 100, bottom: 100),
-            ),
-            Container(
-              child: Text('Container'),
-              color: Colors.blue,
-              height: 200,
-              margin: EdgeInsets.only(top: 100, bottom: 100),
-            ),
-            Container(
-              child: Text('Container'),
-              color: Colors.blue,
-              height: 200,
-              margin: EdgeInsets.only(top: 100, bottom: 100),
-            ),
-            Container(
-              child: Text('Container'),
-              color: Colors.blue,
-              height: 200,
-              margin: EdgeInsets.only(top: 100, bottom: 100),
-            ),
-            Container(
-              child: Text('Container'),
-              color: Colors.blue,
-              height: 200,
-              margin: EdgeInsets.only(top: 100, bottom: 100),
-            ),
-          ],
+            onTap: () {
+              print('tap click');
+            },
+          ),
         ));
   }
 }

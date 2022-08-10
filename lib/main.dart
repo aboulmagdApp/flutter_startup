@@ -37,8 +37,20 @@ class Login extends StatelessWidget {
               color: Colors.red,
               padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
             ),
-            onTap: () {
-              print('tap click');
+            // onTapUp: (tap) {
+            //   print('up');
+            // },
+            // onTapDown: (tap) {
+            //   print('down');
+            // },
+            // onTapCancel: () {
+            //   print('cancel');
+            // },
+            // onLongPress: () {
+            //   print('long press');
+            // },
+            onDoubleTap: () {
+              print('Double Tap');
             },
           ),
         ));

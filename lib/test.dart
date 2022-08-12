@@ -8,22 +8,35 @@ class Test extends StatefulWidget {
 }
 
 class TestState extends State<Test> {
-  bool notify = false;
+  // GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        //   key: scaffoldKey,
         appBar: AppBar(),
         drawer: Drawer(),
         body: Center(
-          child: CircleAvatar(
-            backgroundImage: AssetImage('assets/images/unnamed.png'),
-            // backgroundColor: Colors.green,
-            radius: 40,
-            child: Text(
-              'MA',
-              style: TextStyle(fontSize: 20, color: Colors.black),
-            ),
-          ),
-        ));
+            child: RaisedButton(
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              behavior: SnackBarBehavior.floating,
+              duration: Duration(seconds: 5),
+              content: Text('Hi How Are You'),
+              backgroundColor: Colors.red,
+              action: SnackBarAction(
+                textColor: Colors.white,
+                label: 'close',
+                onPressed: () {
+                  print('close');
+                },
+              ),
+              onVisible: () {
+                print('Show SnakBar');
+              },
+            ));
+          },
+          child: Text('Show SnakBar'),
+        )));
   }
 }

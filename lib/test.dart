@@ -8,35 +8,25 @@ class Test extends StatefulWidget {
 }
 
 class TestState extends State<Test> {
-  // GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        //   key: scaffoldKey,
         appBar: AppBar(),
         drawer: Drawer(),
         body: Center(
             child: RaisedButton(
           onPressed: () {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              behavior: SnackBarBehavior.floating,
-              duration: Duration(seconds: 5),
-              content: Text('Hi How Are You'),
-              backgroundColor: Colors.red,
-              action: SnackBarAction(
-                textColor: Colors.white,
-                label: 'close',
-                onPressed: () {
-                  print('close');
-                },
-              ),
-              onVisible: () {
-                print('Show SnakBar');
-              },
-            ));
+            showDialog(
+                context: context,
+                builder: (ctx) {
+                  return AlertDialog(
+                    title: Text('Title'),
+                    contentPadding: EdgeInsets.all(10),
+                    content: Text("content content content content"),
+                  );
+                });
           },
-          child: Text('Show SnakBar'),
+          child: Text('Show Alert'),
         )));
   }
 }

@@ -8,9 +8,9 @@ class Test extends StatefulWidget {
 }
 
 class TestState extends State<Test> {
-  var usa = false;
-  var sa = false;
-  var eg = false;
+  bool usa = false;
+  bool sa = false;
+  bool eg = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,47 +23,58 @@ class TestState extends State<Test> {
               "Choose Country",
               style: TextStyle(fontSize: 30),
             ),
-            Row(
-              children: [
-                Text("Saudi arabia"),
-                Checkbox(
-                    activeColor: Colors.red,
-                    checkColor: Colors.black,
-                    value: sa,
-                    onChanged: (val) {
-                      setState(() {
-                        sa = val!;
-                      });
-                      print('change');
-                    })
-              ],
-            ),
-            Row(
-              children: [
-                Text("USA"),
-                Checkbox(
-                    value: usa,
-                    onChanged: (val) {
-                      setState(() {
-                        usa = val!;
-                      });
-                      print('change');
-                    })
-              ],
-            ),
-            Row(
-              children: [
-                Text("Egypt"),
-                Checkbox(
-                    value: eg,
-                    onChanged: (val) {
-                      setState(() {
-                        eg = val!;
-                      });
-                      print('change');
-                    })
-              ],
-            ),
+            CheckboxListTile(
+                controlAffinity: ListTileControlAffinity.leading,
+                activeColor: Colors.green,
+                contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                title: Text("country USA"),
+                subtitle: Text(
+                  "America",
+                  style: TextStyle(color: Colors.red),
+                ),
+                secondary: Icon(Icons.flag),
+                isThreeLine: true,
+                selected: sa,
+                value: sa,
+                onChanged: (val) {
+                  setState(() {
+                    sa = val!;
+                  });
+                }),
+            CheckboxListTile(
+                activeColor: Colors.green,
+                contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                title: Text("country KSA"),
+                subtitle: Text(
+                  "Riyadh",
+                  style: TextStyle(color: Colors.red),
+                ),
+                secondary: Icon(Icons.flag),
+                isThreeLine: true,
+                selected: usa,
+                value: usa,
+                onChanged: (val) {
+                  setState(() {
+                    usa = val!;
+                  });
+                }),
+            CheckboxListTile(
+                activeColor: Colors.green,
+                contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                title: Text("country Egypt"),
+                subtitle: Text(
+                  "Cairo",
+                  style: TextStyle(color: Colors.red),
+                ),
+                secondary: Icon(Icons.flag),
+                isThreeLine: true,
+                selected: eg,
+                value: eg,
+                onChanged: (val) {
+                  setState(() {
+                    eg = val!;
+                  });
+                }),
           ]),
         ));
   }

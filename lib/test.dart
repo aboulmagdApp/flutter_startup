@@ -20,8 +20,21 @@ class TestState extends State<Test> {
                 context: context,
                 builder: (ctx) {
                   return AlertDialog(
+                    actions: [
+                      FlatButton(
+                          onPressed: () {
+                            print('ok');
+                          },
+                          child: Text('ok')),
+                      FlatButton(
+                          onPressed: () {
+                            print('cancel');
+                          },
+                          child: Text('cancel'))
+                    ],
+                    actionsPadding: EdgeInsets.symmetric(horizontal: 5),
                     title: Text('Title'),
-                    contentPadding: EdgeInsets.all(10),
+                    // contentPadding: EdgeInsets.all(10),
                     content: Text("content content content content"),
                   );
                 });

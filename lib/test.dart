@@ -8,58 +8,63 @@ class Test extends StatefulWidget {
 }
 
 class TestState extends State<Test> {
-  var selectedCountry;
+  var usa = false;
+  var sa = false;
+  var eg = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      drawer: Drawer(),
-      body: Center(
-          child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 20),
-        padding: EdgeInsets.symmetric(horizontal: 10),
-        color: Colors.blue,
-        child: DropdownButtonHideUnderline(
-          child: DropdownButton(
-            onTap: () {
-              print('Tap');
-            },
-            icon: Icon(Icons.ac_unit_outlined),
-            iconEnabledColor: Colors.white,
-            iconDisabledColor: Colors.red,
-            underline: Divider(thickness: 0),
-            isExpanded: true,
-            hint: Container(
-              width: double.infinity,
-              padding: EdgeInsets.only(right: 10),
-              child: Text(
-                "إختر البلد من هنا",
-                textDirection: TextDirection.rtl,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
-              ),
+        appBar: AppBar(),
+        drawer: Drawer(),
+        body: Container(
+          padding: EdgeInsets.all(10),
+          child: Column(children: [
+            Text(
+              "Choose Country",
+              style: TextStyle(fontSize: 30),
             ),
-            items: ["USA", "UAE", "SY", "EG", "SA"]
-                .map((e) => DropdownMenuItem(
-                      child: Text(
-                        '$e',
-                        textAlign: TextAlign.right,
-                        textDirection: TextDirection.rtl,
-                      ),
-                      value: e,
-                    ))
-                .toList(),
-            onChanged: (val) {
-              setState(() {
-                selectedCountry = val;
-              });
-            },
-            value: selectedCountry,
-          ),
-        ),
-      )),
-    );
+            Row(
+              children: [
+                Text("Saudi arabia"),
+                Checkbox(
+                    activeColor: Colors.red,
+                    checkColor: Colors.black,
+                    value: sa,
+                    onChanged: (val) {
+                      setState(() {
+                        sa = val!;
+                      });
+                      print('change');
+                    })
+              ],
+            ),
+            Row(
+              children: [
+                Text("USA"),
+                Checkbox(
+                    value: usa,
+                    onChanged: (val) {
+                      setState(() {
+                        usa = val!;
+                      });
+                      print('change');
+                    })
+              ],
+            ),
+            Row(
+              children: [
+                Text("Egypt"),
+                Checkbox(
+                    value: eg,
+                    onChanged: (val) {
+                      setState(() {
+                        eg = val!;
+                      });
+                      print('change');
+                    })
+              ],
+            ),
+          ]),
+        ));
   }
 }

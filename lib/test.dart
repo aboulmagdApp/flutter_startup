@@ -14,19 +14,15 @@ class TestState extends State<Test> {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Container(
-          child: ListTile(
-            title: Text("S20 Ultra"),
-            subtitle: Text('SAmsung'),
-            leading: Icon(Icons.mobile_friendly),
-            trailing: Text("Price 200\$"),
-            onTap: () {
-              print('onTap');
-            },
-            onLongPress: () {
-              print('longPress');
-            },
-            tileColor: Colors.green,
+        body: Center(
+          child: CircleAvatar(
+            backgroundImage: AssetImage('assets/images/unnamed.png'),
+            // backgroundColor: Colors.green,
+            radius: 40,
+            child: Text(
+              'MA',
+              style: TextStyle(fontSize: 20, color: Colors.black),
+            ),
           ),
         ));
   }

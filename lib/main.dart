@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Login(),
+      home: Test(),
     );
   }
 }
@@ -54,5 +54,40 @@ class Login extends StatelessWidget {
             },
           ),
         ));
+  }
+}
+
+class Test extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return TestState();
+  }
+}
+
+class TestState extends State<Test> {
+  var text = "How are you";
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      drawer: Drawer(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("$text"),
+            RaisedButton(
+              onPressed: () {
+                setState(() {
+                  text = "Welcome to flutter";
+                });
+                print(text);
+              },
+              child: Text('changeText'),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class Test extends StatefulWidget {
   @override
@@ -13,33 +14,33 @@ class TestState extends State<Test> {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Center(
-            child: RaisedButton(
-          onPressed: () {
-            showDialog(
-                context: context,
-                builder: (ctx) {
-                  return AlertDialog(
-                    actions: [
-                      FlatButton(
-                          onPressed: () {
-                            print('ok');
-                          },
-                          child: Text('ok')),
-                      FlatButton(
-                          onPressed: () {
-                            print('cancel');
-                          },
-                          child: Text('cancel'))
-                    ],
-                    actionsPadding: EdgeInsets.symmetric(horizontal: 5),
-                    title: Text('Title'),
-                    // contentPadding: EdgeInsets.all(10),
-                    content: Text("content content content content"),
-                  );
-                });
-          },
-          child: Text('Show Alert'),
-        )));
+        body: ListView(
+            scrollDirection: Axis.vertical,
+            padding: EdgeInsets.all(5),
+            reverse: false,
+            physics: BouncingScrollPhysics(),
+            children: [
+              Text('aboulmagd'),
+              Container(
+                child: Text('container one'),
+                color: Colors.red,
+                height: 300,
+              ),
+              Container(
+                child: Text('container two'),
+                color: Colors.blue,
+                height: 300,
+              ),
+              Container(
+                child: Text('container three'),
+                color: Colors.yellow,
+                height: 300,
+              ),
+              Container(
+                child: Text('container four'),
+                color: Colors.brown,
+                height: 300,
+              ),
+            ]));
   }
 }

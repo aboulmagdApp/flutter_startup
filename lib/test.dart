@@ -20,7 +20,16 @@ class TestState extends State<Test> {
     return Scaffold(
       appBar: AppBar(),
       drawer: Drawer(),
-      body: ListView.builder(
+      body: ListView.separated(
+          separatorBuilder: ((context, index) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Divider(
+                color: Colors.grey[300],
+                thickness: 2,
+              ),
+            );
+          }),
           itemCount: mobiles.length,
           itemBuilder: (context, i) {
             return ListTile(

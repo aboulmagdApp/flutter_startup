@@ -9,38 +9,26 @@ class Test extends StatefulWidget {
 }
 
 class TestState extends State<Test> {
+  List mobiles = [
+    {"name": "s20 Ultra", "screen": "6.2", "cpu": "8 core"},
+    {"name": "s21 Ultra", "screen": "6.3", "cpu": "5 core"},
+    {"name": "s10", "screen": "7.3", "cpu": "2 core"},
+    {"name": "iphone 13 proMax", "screen": "7.3", "cpu": "10 core"}
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
-        drawer: Drawer(),
-        body: ListView(
-            scrollDirection: Axis.vertical,
-            padding: EdgeInsets.all(5),
-            reverse: false,
-            physics: BouncingScrollPhysics(),
-            children: [
-              Text('aboulmagd'),
-              Container(
-                child: Text('container one'),
-                color: Colors.red,
-                height: 300,
-              ),
-              Container(
-                child: Text('container two'),
-                color: Colors.blue,
-                height: 300,
-              ),
-              Container(
-                child: Text('container three'),
-                color: Colors.yellow,
-                height: 300,
-              ),
-              Container(
-                child: Text('container four'),
-                color: Colors.brown,
-                height: 300,
-              ),
-            ]));
+      appBar: AppBar(),
+      drawer: Drawer(),
+      body: ListView.builder(
+          itemCount: mobiles.length,
+          itemBuilder: (context, i) {
+            return ListTile(
+              title: Text("${mobiles[i]['name']}"),
+              subtitle: Text("Screen : ${mobiles[i]['screen']}"),
+              trailing: Text("cpu : ${mobiles[i]['cpu']}"),
+            );
+          }),
+    );
   }
 }

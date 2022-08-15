@@ -18,26 +18,24 @@ class TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      drawer: Drawer(),
-      body: ListView.separated(
-          separatorBuilder: ((context, index) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: Divider(
-                color: Colors.grey[300],
-                thickness: 2,
-              ),
-            );
-          }),
-          itemCount: mobiles.length,
-          itemBuilder: (context, i) {
-            return ListTile(
-              title: Text("${mobiles[i]['name']}"),
-              subtitle: Text("Screen : ${mobiles[i]['screen']}"),
-              trailing: Text("cpu : ${mobiles[i]['cpu']}"),
-            );
-          }),
-    );
+        appBar: AppBar(),
+        drawer: Drawer(),
+        body: Container(
+            child: GridView.builder(
+                // scrollDirection: Axis.horizontal,
+                itemCount: mobiles.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2, crossAxisSpacing: 5, mainAxisSpacing: 5),
+                itemBuilder: (context, i) {
+                  return Container(
+                    // margin: EdgeInsets.all(10),
+                    child: ListTile(
+                      tileColor: Colors.red,
+                      title: Text("${mobiles[i]['name']}"),
+                      subtitle: Text("Screen : ${mobiles[i]['screen']}"),
+                      // trailing: Text("cpu : ${mobiles[i]['cpu']}"),
+                    ),
+                  );
+                })));
   }
 }

@@ -21,21 +21,15 @@ class TestState extends State<Test> {
         appBar: AppBar(),
         drawer: Drawer(),
         body: Container(
-            child: GridView.builder(
-                // scrollDirection: Axis.horizontal,
-                itemCount: mobiles.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2, crossAxisSpacing: 5, mainAxisSpacing: 5),
-                itemBuilder: (context, i) {
-                  return Container(
-                    // margin: EdgeInsets.all(10),
-                    child: ListTile(
-                      tileColor: Colors.red,
-                      title: Text("${mobiles[i]['name']}"),
-                      subtitle: Text("Screen : ${mobiles[i]['screen']}"),
-                      // trailing: Text("cpu : ${mobiles[i]['cpu']}"),
-                    ),
-                  );
-                })));
+            child: GridView(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 10),
+          children: List.generate(6, (index) {
+            return Container(
+              color: Colors.red,
+              child: Text('Container : $index'),
+            );
+          }),
+        )));
   }
 }

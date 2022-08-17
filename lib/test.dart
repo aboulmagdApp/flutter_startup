@@ -18,8 +18,20 @@ class TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
-        drawer: Drawer(),
+        appBar: AppBar(
+          title: Text('Homepage'),
+          leading: Icon(Icons.home),
+          actions: [
+            IconButton(onPressed: () {}, icon: Icon(Icons.save)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.alarm_add)),
+          ],
+          elevation: 2,
+          shadowColor: Colors.blue,
+          backgroundColor: Colors.brown,
+          brightness: Brightness.light,
+          centerTitle: true,
+        ),
+        // drawer: Drawer(),
         body: Container(
             child: GridView(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

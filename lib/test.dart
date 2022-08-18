@@ -17,6 +17,8 @@ class TestState extends State<Test> {
   ];
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> _scaffoldKey =
+        new GlobalKey<ScaffoldState>();
     return Scaffold(
         appBar: AppBar(
           title: Text('Homepage'),
@@ -68,10 +70,12 @@ class TestState extends State<Test> {
         ),
         body: Center(
           child: Container(
-            child: RaisedButton(
-              onPressed: () => Scaffold.of(context).openDrawer(),
-              child: Text('open drawer'),
-            ),
+            child: Builder(builder: (context) {
+              return RaisedButton(
+                onPressed: () => Scaffold.of(context).openDrawer(),
+                child: Text('open drawer'),
+              );
+            }),
           ),
         ));
   }

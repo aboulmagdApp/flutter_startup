@@ -31,17 +31,48 @@ class TestState extends State<Test> {
           brightness: Brightness.light,
           centerTitle: true,
         ),
-        // drawer: Drawer(),
-        body: Container(
-            child: GridView(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 10),
-          children: List.generate(6, (index) {
-            return Container(
-              color: Colors.red,
-              child: Text('Container : $index'),
-            );
-          }),
-        )));
+        drawerScrimColor: Colors.red.withOpacity(0.8),
+        drawer: Drawer(
+          child: Column(children: [
+            UserAccountsDrawerHeader(
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Colors.green,
+                  child: Text(
+                    'M',
+                    style: TextStyle(color: Colors.yellow),
+                  ),
+                ),
+                accountName: Text('aboulmagd'),
+                accountEmail: Text('aboulmagd"live.com')),
+            ListTile(
+              title: Text('Home page'),
+              leading: Icon(Icons.home),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text('Help'),
+              leading: Icon(Icons.help),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text('About'),
+              leading: Icon(Icons.help_center),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text('Logout'),
+              leading: Icon(Icons.logout),
+              onTap: () {},
+            ),
+          ]),
+        ),
+        body: Center(
+          child: Container(
+            child: RaisedButton(
+              onPressed: () => Scaffold.of(context).openDrawer(),
+              child: Text('open drawer'),
+            ),
+          ),
+        ));
   }
 }

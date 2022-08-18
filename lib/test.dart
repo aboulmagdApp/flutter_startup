@@ -16,6 +16,24 @@ class TestState extends State<Test> {
         child: Scaffold(
             appBar: AppBar(
               title: Text('Homepage'),
+              bottom: TabBar(
+                  isScrollable: true,
+                  indicatorColor: Colors.red,
+                  indicatorWeight: 2,
+                  labelColor: Colors.white,
+                  onTap: (index) {
+                    print(index);
+                  },
+                  tabs: [
+                    Tab(
+                      child: Text('widget one'),
+                      icon: Icon(Icons.person),
+                    ),
+                    Tab(
+                      child: Text('widget two'),
+                      icon: Icon(Icons.alarm),
+                    ),
+                  ]),
             ),
             body: TabBarView(
               children: [

@@ -7,6 +7,8 @@ class Test extends StatefulWidget {
 }
 
 class _TestState extends State<Test> {
+  TextEditingController username = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,12 +20,16 @@ class _TestState extends State<Test> {
           child: Column(
             children: [
               TextFormField(
-                cursorColor: Colors.red,
-                cursorHeight: 30,
-                initialValue: "aboulmagd",
-                keyboardType: TextInputType.number,
-                maxLength: 20,
-                obscureText: true,
+                //readOnly: true,
+                //initialValue: "aboulmagd",
+                controller: username,
+                //textAlign: TextAlign.end,
+              ),
+              RaisedButton(
+                onPressed: () {
+                  print(username.text);
+                },
+                child: Text('send'),
               )
             ],
           ),

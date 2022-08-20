@@ -18,14 +18,7 @@ class _TestState extends State<Test> {
           child: Column(
             children: [
               TextFormField(
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.red, width: 0)),
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.grey, width: 0)),
-                ),
+                decoration: InputDecoration(border: OutlineInputBorder()),
               )
             ],
           ),

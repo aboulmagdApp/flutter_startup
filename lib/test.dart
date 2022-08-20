@@ -8,10 +8,10 @@ class Test extends StatefulWidget {
 
 class _TestState extends State<Test> {
   late PageController pc;
-
+  int selectedIndex = 0;
   @override
   void initState() {
-    pc = new PageController(initialPage: 2, viewportFraction: 0.6);
+    pc = new PageController(initialPage: 0, viewportFraction: 0.6);
     super.initState();
   }
 
@@ -30,7 +30,7 @@ class _TestState extends State<Test> {
                 //scrollDirection: Axis.vertical,
                 controller: pc,
                 onPageChanged: (index) {
-                  print(index);
+                  selectedIndex = index;
                 },
                 children: [
                   Image.asset(
@@ -51,6 +51,13 @@ class _TestState extends State<Test> {
                   ),
                 ],
               ),
+            ),
+            RaisedButton(
+              onPressed: () {
+                pc.animateToPage(2,
+                    duration: Duration(seconds: 1), curve: Curves.easeIn);
+              },
+              child: Text('go TO Page 2'),
             )
           ],
         ));

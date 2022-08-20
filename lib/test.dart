@@ -18,10 +18,12 @@ class _TestState extends State<Test> {
           child: Column(
             children: [
               TextFormField(
-                decoration: InputDecoration(
-                    icon: Icon(Icons.add),
-                    prefixIcon: Icon(Icons.abc_outlined),
-                    suffixIcon: Icon(Icons.alternate_email)),
+                cursorColor: Colors.red,
+                cursorHeight: 30,
+                initialValue: "aboulmagd",
+                keyboardType: TextInputType.number,
+                maxLength: 20,
+                obscureText: true,
               )
             ],
           ),

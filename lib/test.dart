@@ -19,10 +19,13 @@ class _TestState extends State<Test> {
             children: [
               TextFormField(
                 decoration: InputDecoration(
-                    // hintText: "ادخل الاسم",
-                    // hintStyle: TextStyle(color: Colors.blue),
-                    // prefixIcon: Icon(Icons.search)
-                    suffix: Text('ادخل الاسم')),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(color: Colors.red, width: 0)),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(color: Colors.grey, width: 0)),
+                ),
               )
             ],
           ),

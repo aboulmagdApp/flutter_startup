@@ -15,6 +15,13 @@ class _TestState extends State<Test> {
     super.initState();
   }
 
+  List images = [
+    {"url": "images/fb.png"},
+    {"url": "images/flutter.png"},
+    {"url": "images/WhatsApp.png"},
+    {"url": "images/google.png"},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,31 +32,12 @@ class _TestState extends State<Test> {
           children: [
             Container(
               height: 300,
-              child: PageView(
-                //reverse: true,
-                //scrollDirection: Axis.vertical,
+              child: PageView.builder(
                 controller: pc,
-                onPageChanged: (index) {
-                  selectedIndex = index;
+                itemCount: images.length,
+                itemBuilder: (context, index) {
+                  return Image.asset(images[index]['url']);
                 },
-                children: [
-                  Image.asset(
-                    'images/fb.png',
-                    fit: BoxFit.fill,
-                  ),
-                  Image.asset(
-                    'images/flutter.png',
-                    fit: BoxFit.fill,
-                  ),
-                  Image.asset(
-                    'images/WhatsApp.png',
-                    fit: BoxFit.fill,
-                  ),
-                  Image.asset(
-                    'images/google.png',
-                    fit: BoxFit.fill,
-                  ),
-                ],
               ),
             ),
             RaisedButton(
@@ -63,3 +51,6 @@ class _TestState extends State<Test> {
         ));
   }
 }
+
+
+// pageView + loop = PageViewBuilder

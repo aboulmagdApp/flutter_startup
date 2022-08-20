@@ -7,40 +7,52 @@ class Test extends StatefulWidget {
 }
 
 class _TestState extends State<Test> {
-  int selectedIndex = 1;
-  List<Widget> widgetpages = [
-    Text(
-      "Mohamed",
-      style: TextStyle(fontSize: 40),
-    ),
-    Text(
-      "aboulmagd",
-      style: TextStyle(fontSize: 40),
-    ),
-  ];
+  late PageController pc;
+
+  @override
+  void initState() {
+    pc = new PageController(initialPage: 2, viewportFraction: 0.6);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text('Homepage'),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-            selectedItemColor: Colors.white,
-            selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
-            unselectedItemColor: Colors.black,
-            currentIndex: selectedIndex,
-            onTap: (index) {
-              setState(() {
-                selectedIndex = index;
-              });
-            },
-            backgroundColor: Colors.brown,
-            items: [
-              BottomNavigationBarItem(
-                  label: "widget one", icon: Icon(Icons.person)),
-              BottomNavigationBarItem(
-                  label: "widget two", icon: Icon(Icons.alarm_on)),
-            ]),
-        body: widgetpages.elementAt(selectedIndex));
+        body: Column(
+          children: [
+            Container(
+              height: 300,
+              child: PageView(
+                //reverse: true,
+                //scrollDirection: Axis.vertical,
+                controller: pc,
+                onPageChanged: (index) {
+                  print(index);
+                },
+                children: [
+                  Image.asset(
+                    'images/fb.png',
+                    fit: BoxFit.fill,
+                  ),
+                  Image.asset(
+                    'images/flutter.png',
+                    fit: BoxFit.fill,
+                  ),
+                  Image.asset(
+                    'images/WhatsApp.png',
+                    fit: BoxFit.fill,
+                  ),
+                  Image.asset(
+                    'images/google.png',
+                    fit: BoxFit.fill,
+                  ),
+                ],
+              ),
+            )
+          ],
+        ));
   }
 }

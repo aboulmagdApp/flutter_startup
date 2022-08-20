@@ -3,68 +3,44 @@ import 'package:flutter/rendering.dart';
 
 class Test extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
-    return TestState();
-  }
+  State<Test> createState() => _TestState();
 }
 
-class TestState extends State<Test> with SingleTickerProviderStateMixin {
-  late TabController mycontroller;
-
-  static const List<Tab> myTabs = <Tab>[
-    Tab(
-      text: 'widget one',
-      icon: Icon(Icons.person),
+class _TestState extends State<Test> {
+  int selectedIndex = 1;
+  List<Widget> widgetpages = [
+    Text(
+      "Mohamed",
+      style: TextStyle(fontSize: 40),
     ),
-    Tab(
-      text: 'widget two',
-      icon: Icon(Icons.alarm),
-    ),
-    Tab(
-      text: 'widget three',
-      icon: Icon(Icons.copy),
+    Text(
+      "aboulmagd",
+      style: TextStyle(fontSize: 40),
     ),
   ];
-
-  @override
-  void initState() {
-    mycontroller =
-        new TabController(length: myTabs.length, vsync: this, initialIndex: 1);
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text('Homepage'),
-          bottom: TabBar(
-              controller: mycontroller,
-              isScrollable: true,
-              indicatorColor: Colors.red,
-              indicatorWeight: 2,
-              labelColor: Colors.white,
-              onTap: (index) {
-                print(index);
-              },
-              tabs: myTabs),
         ),
-        body: TabBarView(
-          controller: mycontroller,
-          children: [
-            Container(
-                color: Colors.green,
-                width: double.infinity,
-                child: Text('Mohamed')),
-            Container(
-                color: Colors.yellow,
-                width: double.infinity,
-                child: Text('aboulamgd')),
-            Container(
-                color: Colors.brown,
-                width: double.infinity,
-                child: Text('copy data')),
-          ],
-        ));
+        bottomNavigationBar: BottomNavigationBar(
+            selectedItemColor: Colors.white,
+            selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
+            unselectedItemColor: Colors.black,
+            currentIndex: selectedIndex,
+            onTap: (index) {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
+            backgroundColor: Colors.brown,
+            items: [
+              BottomNavigationBarItem(
+                  label: "widget one", icon: Icon(Icons.person)),
+              BottomNavigationBarItem(
+                  label: "widget two", icon: Icon(Icons.alarm_on)),
+            ]),
+        body: widgetpages.elementAt(selectedIndex));
   }
 }

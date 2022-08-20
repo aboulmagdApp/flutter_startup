@@ -18,7 +18,10 @@ class _TestState extends State<Test> {
           child: Column(
             children: [
               TextFormField(
-                decoration: InputDecoration(border: OutlineInputBorder()),
+                decoration: InputDecoration(
+                    icon: Icon(Icons.add),
+                    prefixIcon: Icon(Icons.abc_outlined),
+                    suffixIcon: Icon(Icons.alternate_email)),
               )
             ],
           ),

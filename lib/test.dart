@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'one.dart';
 // import 'package:flutter/rendering.dart';
 
 class Test extends StatefulWidget {
@@ -27,43 +29,21 @@ class _TestState extends State<Test> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Homepage'),
+          title: Text('Text page'),
         ),
-        body: Form(
-          autovalidateMode: AutovalidateMode.always,
-          key: formstate,
-          child: Container(
-            padding: EdgeInsets.all(10),
-            child: Column(
-              children: [
-                TextFormField(
-                  onSaved: (text) {
-                    username = text;
-                  },
-                  validator: (text) {
-                    if (text!.length < 4) {
-                      return 'لا يمكن النص يكون اقل من اربع احرف';
-                    }
-                    if (text.length > 10) {
-                      return 'لا يمكن النص يكون اكتر من 10 احرف';
-                    }
-                    return null;
-                  },
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text("value : $value"),
-                RaisedButton(
-                  onPressed: send,
-                  child: Text('send'),
-                )
-              ],
-            ),
-          ),
+        body: Column(
+          children: [
+            Center(
+              child: RaisedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx) {
+                    return One();
+                  }));
+                },
+                child: Text('go To Page one'),
+              ),
+            )
+          ],
         ));
   }
 }
-
-
-// pageView + loop = PageViewBuilder

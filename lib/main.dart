@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_start/one.dart';
 import 'package:flutter_start/test.dart';
 
 void main() {
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Test(),
+      routes: {"One": (context) => One()},
     );
   }
 }

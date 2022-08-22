@@ -36,9 +36,7 @@ class _TestState extends State<Test> {
             Center(
               child: RaisedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx) {
-                    return One();
-                  }));
+                  Navigator.of(context).pushNamed("One");
                 },
                 child: Text('go To Page one'),
               ),

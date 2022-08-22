@@ -23,7 +23,9 @@ class _TestState extends State<Test> {
                 //readOnly: true,
                 //initialValue: "aboulmagd",
                 controller: username,
-                //textAlign: TextAlign.end,
+                style: TextStyle(color: Colors.red),
+                textInputAction: TextInputAction.search,
+                textAlign: TextAlign.end,
               ),
               RaisedButton(
                 onPressed: () {

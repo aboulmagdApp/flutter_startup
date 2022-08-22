@@ -6,13 +6,17 @@ class Test extends StatefulWidget {
   State<Test> createState() => _TestState();
 }
 
+var username;
+
 class _TestState extends State<Test> {
-  TextEditingController username = new TextEditingController();
+  // TextEditingController username = new TextEditingController();
   String value = "";
   GlobalKey<FormState> formstate = new GlobalKey<FormState>();
   send() {
     var formdata = formstate.currentState;
     if (formdata!.validate()) {
+      formdata.save();
+      print("username = $username");
       print("valid");
     } else {
       print("not valid");
@@ -33,6 +37,9 @@ class _TestState extends State<Test> {
             child: Column(
               children: [
                 TextFormField(
+                  onSaved: (text) {
+                    username = text;
+                  },
                   validator: (text) {
                     if (text!.length < 4) {
                       return 'لا يمكن النص يكون اقل من اربع احرف';

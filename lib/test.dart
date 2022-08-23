@@ -9,7 +9,19 @@ class Test extends StatefulWidget {
 }
 
 class _TestState extends State<Test> {
-  var _val = 0.0;
+  late ScrollController sc;
+
+  @override
+  void initState() {
+    sc = new ScrollController();
+    sc.addListener(() {
+      print(sc.offset);
+      print("Max scroll : ${sc.position.maxScrollExtent}");
+      print("Min scroll : ${sc.position.minScrollExtent}");
+    });
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,20 +29,31 @@ class _TestState extends State<Test> {
         appBar: AppBar(
           title: Text('Text page'),
         ),
-        body: Column(
+        body: ListView(
+          controller: sc,
           children: [
-            Slider(
-                min: 0.0,
-                max: 100,
-                activeColor: Colors.red,
-                inactiveColor: Colors.black,
-                value: _val,
-                onChanged: (val) {
-                  setState(() {
-                    _val = val;
-                    print(_val);
-                  });
-                })
+            RaisedButton(
+              onPressed: () {
+                sc.jumpTo(sc.position.maxScrollExtent);
+              },
+              child: Text("jump to bottom"),
+            ),
+            ...List.generate(
+                8,
+                (index) => Container(
+                      margin: EdgeInsets.all(10),
+                      color: index.isEven ? Colors.green : Colors.red,
+                      height: 100,
+                      width: double.infinity,
+                      child: Text('Container $index'),
+                    )),
+            RaisedButton(
+              onPressed: () {
+                sc.animateTo(0,
+                    duration: Duration(seconds: 1), curve: Curves.easeIn);
+              },
+              child: Text("jump to top"),
+            )
           ],
         ));
   }

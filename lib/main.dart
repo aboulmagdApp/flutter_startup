@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_start/auth/login.dart';
+import 'package:flutter_start/auth/signup.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,10 @@ class MyApp extends StatelessWidget {
           buttonColor: Colors.blue,
           textTheme: TextTheme(
               headline6: TextStyle(fontSize: 20, color: Colors.white))),
-      routes: {"login": (context) => Login()},
+      routes: {
+        "login": (context) => Login(),
+        "signup": (context) => SignUp(),
+      },
     );
   }
 }

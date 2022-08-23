@@ -27,23 +27,49 @@ class _TestState extends State<Test> {
 }
 
 class Datasearch extends SearchDelegate {
+  List names = ["moahmed", "aboulamgd", "eman", "shambhavi", "carla", "lara"];
   @override
   List<Widget>? buildActions(BuildContext context) {
-    return [IconButton(onPressed: () {}, icon: Icon(Icons.close))];
+    return [
+      IconButton(
+          onPressed: () {
+            query = "";
+          },
+          icon: Icon(Icons.close))
+    ];
   }
 
   @override
   Widget? buildLeading(BuildContext context) {
-    return IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back));
+    return IconButton(
+        onPressed: () {
+          close(context, null);
+        },
+        icon: Icon(Icons.arrow_back));
   }
 
   @override
   Widget buildResults(BuildContext context) {
-    return Text('محتوى البحث');
+    return Text(query);
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    return Center(child: Text('محتوى البحث'));
+    List filternames =
+        names.where((element) => element.contains(query)).toList();
+    return ListView.builder(
+      itemCount: query == "" ? names.length : filternames.length,
+      itemBuilder: (context, i) {
+        return InkWell(
+          onTap: () {
+            query = query == "" ? names[i] : filternames[i];
+            showResults(context);
+          },
+          child: ListTile(
+            title: Text(query == "" ? "${names[i]}" : "${filternames[i]}"),
+          ),
+        );
+      },
+    );
   }
 }

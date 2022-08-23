@@ -20,7 +20,16 @@ class One extends StatelessWidget {
               ;
             },
             child: Text('Back'),
-          )
+          ),
+          RaisedButton(
+            onPressed: () {
+              if (Navigator.of(context).canPop()) {
+                Navigator.of(context).pushNamed("two");
+              }
+              ;
+            },
+            child: Text('go to page two'),
+          ),
         ],
       ),
     );

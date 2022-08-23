@@ -36,7 +36,7 @@ class _TestState extends State<Test> {
             Center(
               child: RaisedButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed("One");
+                  Navigator.of(context).pushReplacementNamed("One");
                 },
                 child: Text('go To Page one'),
               ),

@@ -14,11 +14,11 @@ class _SignUpState extends State<SignUp> {
         body: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Center(
-            child: Image.asset(
-          "assets/images/logo.png",
-          width: 200,
-        )),
+        // Center(
+        //     child: Image.asset(
+        //   "assets/images/logo.png",
+        //   width: 200,
+        // )),
         Container(
           padding: EdgeInsets.all(10),
           child: Form(

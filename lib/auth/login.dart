@@ -58,7 +58,9 @@ class _LoginState extends State<Login> {
               ),
               Container(
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushReplacementNamed("homepage");
+                  },
                   child: Text(
                     "login",
                     style: Theme.of(context).textTheme.headline6,

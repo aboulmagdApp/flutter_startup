@@ -59,9 +59,9 @@ class _LoginState extends State<Login> {
                   onPressed: () {},
                   child: Text(
                     "login",
-                    style: TextStyle(fontSize: 20),
+                    style: Theme.of(context).textTheme.headline6,
                   ),
-                  color: Colors.blue,
+                  // color: Colors.blue,
                   textColor: Colors.white,
                 ),
               )

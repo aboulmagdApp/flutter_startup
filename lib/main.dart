@@ -11,6 +11,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Login(),
+      theme: ThemeData(
+          primaryColor: Colors.blue,
+          buttonColor: Colors.blue,
+          textTheme: TextTheme(
+              headline6: TextStyle(fontSize: 20, color: Colors.white))),
       routes: {"login": (context) => Login()},
     );
   }

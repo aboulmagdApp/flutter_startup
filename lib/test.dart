@@ -14,21 +14,36 @@ class _TestState extends State<Test> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Text page'),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  showSearch(context: context, delegate: Datasearch());
+                },
+                icon: Icon(Icons.search))
+          ],
         ),
-        body: Center(
-          child: RaisedButton(
-            onPressed: () {
-              showModalBottomSheet(
-                  context: context,
-                  builder: (context) {
-                    return Container(
-                      child: Text("bottomSheet"),
-                      height: 200,
-                    );
-                  });
-            },
-            child: Text("Show Modal Bottom Sheet"),
-          ),
-        ));
+        body: Center(child: Text('aboulmagd')));
+  }
+}
+
+class Datasearch extends SearchDelegate {
+  @override
+  List<Widget>? buildActions(BuildContext context) {
+    return [IconButton(onPressed: () {}, icon: Icon(Icons.close))];
+  }
+
+  @override
+  Widget? buildLeading(BuildContext context) {
+    return IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back));
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    return Text('محتوى البحث');
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    return Center(child: Text('محتوى البحث'));
   }
 }

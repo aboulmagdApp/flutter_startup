@@ -8,22 +8,8 @@ class Test extends StatefulWidget {
   State<Test> createState() => _TestState();
 }
 
-var username;
-
 class _TestState extends State<Test> {
-  // TextEditingController username = new TextEditingController();
-  String value = "";
-  GlobalKey<FormState> formstate = new GlobalKey<FormState>();
-  send() {
-    var formdata = formstate.currentState;
-    if (formdata!.validate()) {
-      formdata.save();
-      print("username = $username");
-      print("valid");
-    } else {
-      print("not valid");
-    }
-  }
+  var _val = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +19,18 @@ class _TestState extends State<Test> {
         ),
         body: Column(
           children: [
-            Center(
-              child: RaisedButton(
-                onPressed: () {
-                  Navigator.of(context).pushReplacementNamed("One");
-                },
-                child: Text('go To Page one'),
-              ),
-            )
+            Slider(
+                min: 0.0,
+                max: 100,
+                activeColor: Colors.red,
+                inactiveColor: Colors.black,
+                value: _val,
+                onChanged: (val) {
+                  setState(() {
+                    _val = val;
+                    print(_val);
+                  });
+                })
           ],
         ));
   }

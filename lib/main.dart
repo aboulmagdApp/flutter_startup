@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_start/auth/login.dart';
-import 'package:flutter_start/auth/signup.dart';
-
-import 'crud/addnotes.dart';
-import 'home/homepage.dart';
+import 'package:flutter_start/dialog.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,18 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Login(),
-      theme: ThemeData(
-          primaryColor: Colors.blue,
-          buttonColor: Colors.blue,
-          textTheme: TextTheme(
-              headline6: TextStyle(fontSize: 20, color: Colors.white))),
-      routes: {
-        "login": (context) => Login(),
-        "signup": (context) => SignUp(),
-        "homepage": (context) => HomePage(),
-        "addnotes": (context) => AddNotes()
-      },
+      home: DialogTest(),
     );
   }
 }

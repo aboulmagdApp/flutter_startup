@@ -17,27 +17,30 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     // double wdw = MediaQuery.of(context).size.width;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Homepage"),
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("الصفحة الرئيسية"),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed("addnotes");
+          },
+          backgroundColor: Theme.of(context).primaryColor,
+          child: Icon(Icons.add),
+        ),
+        body: Container(
+            child: ListView.builder(
+                itemCount: notes.length,
+                itemBuilder: (context, i) {
+                  return Dismissible(
+                      key: Key("$i"),
+                      child: ListNotes(
+                        notes: notes[i],
+                      ));
+                })),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).pushNamed("addnotes");
-        },
-        backgroundColor: Theme.of(context).primaryColor,
-        child: Icon(Icons.add),
-      ),
-      body: Container(
-          child: ListView.builder(
-              itemCount: notes.length,
-              itemBuilder: (context, i) {
-                return Dismissible(
-                    key: Key("$i"),
-                    child: ListNotes(
-                      notes: notes[i],
-                    ));
-              })),
     );
   }
 }

@@ -16,6 +16,22 @@ class GeolocatorTest extends StatefulWidget {
 }
 
 class _GeolocatorTestState extends State<GeolocatorTest> {
+  Future getData() async {
+    var a;
+    print('start function');
+    await Future.delayed(Duration(seconds: 3), () {
+      a = 10;
+      print('aboulmagd');
+    });
+    print('end function $a');
+  }
+
+  @override
+  void initState() {
+    getData();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

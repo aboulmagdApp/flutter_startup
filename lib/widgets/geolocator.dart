@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:geocoding/geocoding.dart';
 
 // we will add the permition for Android in the following path :-
 // - android -> app -> src -> main -> AndroidManifest.xml
@@ -68,6 +69,9 @@ class _GeolocatorTestState extends State<GeolocatorTest> {
               print(cl);
               print(cl.latitude);
               print(cl.longitude);
+              List<Placemark> placemarks =
+                  await placemarkFromCoordinates(24.626305, 46.743371);
+              print(placemarks[0].street);
             },
             child: Text('show lat and long'),
           ),

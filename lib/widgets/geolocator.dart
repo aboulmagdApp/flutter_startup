@@ -65,13 +65,10 @@ class _GeolocatorTestState extends State<GeolocatorTest> {
         body: Center(
           child: RaisedButton(
             onPressed: () async {
-              cl = await getLatAndLong();
-              print(cl);
-              print(cl.latitude);
-              print(cl.longitude);
-              List<Placemark> placemarks =
-                  await placemarkFromCoordinates(24.626305, 46.743371);
-              print(placemarks[0].street);
+              var distanceBetween = Geolocator.distanceBetween(
+                  24.327077, 39.631053, 27.547242, 41.741836);
+              var distanceKm = distanceBetween / 1000;
+              print(distanceKm);
             },
             child: Text('show lat and long'),
           ),

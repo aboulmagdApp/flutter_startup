@@ -7,6 +7,8 @@
         android:label="flutter_start"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyCM8mFhfRel9CKA8_WBS2GJ0AMUhq879pM"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -8,36 +8,32 @@ class HttpTest extends StatefulWidget {
 }
 
 class _HttpTestState extends State<HttpTest> {
-  List posts = [];
-
   Future getPosts() async {
     var url = "https://jsonplaceholder.typicode.com/posts";
     var respones = await http.get(Uri.parse(url));
     var responesbody = jsonDecode(respones.body);
-    setState(() {
-      posts.addAll(responesbody);
-    });
-  }
-
-  @override
-  void initState() {
-    getPosts();
-    super.initState();
+    return responesbody;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: posts == null || posts.isEmpty
-          ? Center(child: CircularProgressIndicator())
-          : ListView.builder(
-              itemCount: posts.length,
-              itemBuilder: (context, i) {
-                return ListTile(
-                  title: Text("${posts[i]['title']}"),
-                );
-              }),
-    );
+        appBar: AppBar(),
+        body: FutureBuilder(
+          future: getPosts(),
+          builder: (context, AsyncSnapshot snapshot) {
+            if (snapshot.hasData) {
+              return ListView.builder(
+                  itemCount: snapshot.data!.length,
+                  itemBuilder: (context, i) {
+                    return ListTile(
+                      title: Text("${snapshot.data![i]['title']}"),
+                    );
+                  });
+            } else {
+              return Center(child: CircularProgressIndicator());
+            }
+          },
+        ));
   }
 }

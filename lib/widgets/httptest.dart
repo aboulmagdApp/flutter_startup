@@ -14,7 +14,10 @@ class _HttpTestState extends State<HttpTest> {
     var url = "https://jsonplaceholder.typicode.com/posts";
     var respones = await http.get(Uri.parse(url));
     var responesbody = jsonDecode(respones.body);
-    posts.addAll(responesbody);
+    setState(() {
+      posts.addAll(responesbody);
+    });
+
     print(responesbody);
   }
 

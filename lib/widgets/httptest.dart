@@ -17,8 +17,6 @@ class _HttpTestState extends State<HttpTest> {
     setState(() {
       posts.addAll(responesbody);
     });
-
-    print(responesbody);
   }
 
   @override
